@@ -1,9 +1,10 @@
-if [ -z "$1" ]
-then
-	echo "cannot push without commit message!"
+git add .
 
-else
-	git add . 
-	git commit -am "$1"
-	git push origin
-fi
+echo 'Enter the commit message:'
+read commitMessage
+
+git commit -m "$commitMessage"
+
+git push origin
+
+read
